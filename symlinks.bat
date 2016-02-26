@@ -9,11 +9,11 @@ rem Pegando o diretorio atual expandido.
 set path=%~dp0
 
 rem Remove se ja existem
-del ../static/css/unirio
-del ../static/fonts/unirio
-del ../static/images/unirio
-del ../static/js/unirio
-del ../views/_unirio
+del ..\static\css\unirio
+del ..\static\fonts\unirio
+del ..\static\images\unirio
+del ..\static\js\unirio
+del ..\views\_unirio
 
 rem Cria os links
 
