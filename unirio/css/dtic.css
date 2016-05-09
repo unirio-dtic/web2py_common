@@ -284,6 +284,7 @@ table tr:hover td {
       font-size: 16px;
       font-weight: bold;
       text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+      display: block;
     }
 
     /* Navbar links: increase padding for taller navbar */
