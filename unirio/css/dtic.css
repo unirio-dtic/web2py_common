@@ -79,10 +79,6 @@ span.big-header-letter{
     color:#ccc;
 }
 
-a.brand:hover{
-    color: #ccc;
-}
-
 footer, #footer, .footer{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     color: white;
