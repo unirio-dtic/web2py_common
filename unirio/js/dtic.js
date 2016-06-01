@@ -16,7 +16,7 @@ $(window).bind('scroll', function() {
             } else {
 
                 $('#unirio_main_header').css({
-                    position: 'relative',
+                    position: 'fixed',
                     top: '0px',
                     width: 'auto',
                     opacity: '1'
