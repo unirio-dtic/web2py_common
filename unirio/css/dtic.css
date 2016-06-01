@@ -54,6 +54,7 @@ p{
 
 .navbar-inverse .nav li.dropdown.open>.dropdown-toggle, .navbar-inverse .nav li.dropdown.active>.dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active>.dropdown-toggle {
     color: #ffffff;
+    background-image: none;
     background-color: #3677a9;
     border-color:#0081c2;
 }
