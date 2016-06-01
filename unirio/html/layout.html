@@ -43,13 +43,14 @@
     {{block head}}{{end}}
     {{
     # using sidebars need to know what sidebar you want to use
-    mc0 = 'col-md-12'
-    mc1 = 'col-md-9'
-    mc2 = 'col-md-6'
+    both_miss = 'col-md-offset-2 col-md-8'
+    left_miss = 'col-md-offset-2 col-md-8'
+    right_miss = 'col-md-offset-2 col-md-8'
+    _3_column_model = 'col-md-8'
     left_sidebar_enabled = globals().get('left_sidebar_enabled', False)
     right_sidebar_enabled = globals().get('right_sidebar_enabled', False)
-    middle_column = {0: mc0, 1: mc1, 2: mc2}[
-    (left_sidebar_enabled and 1 or 0)+(right_sidebar_enabled and 1 or 0)]
+    middle_column = {0: both_miss, 1: left_miss, 4: right_miss,5:_3_column_model}[
+    (left_sidebar_enabled and 4 or 0)+(right_sidebar_enabled and 1 or 0)]
     }}
   </head>
   <body>
@@ -78,15 +79,26 @@
       </div>
     </nav>
     <!-- Masthead ===================================== -->    
-    {{block header}}
-    {{end}}
+    <header class="container" id="header">
+      {{if response.title:}}
+        <div class="container-fluid">
+            <div class="page-header">
+                <h1>
+                    {{=A(IMG(_src=URL("static", "images/unirio/logo_dtic_final.png"), _class="logo_dtic"), _href="http://www.unirio.br/dtic", _target="blank")}}
+                    {{=SPAN(response.subtitle.upper(),_class='header-title-portal')}}
+                </h1>
+            </div>
+        </div>
+	{{pass}}
+    </header>
+
     <!-- Main ========================================= -->
     <!-- Begin page content -->
     <div class="container-fluid main-container">
       {{if left_sidebar_enabled:}}
-        <div class="col-md-3 left-sidebar">
+        <div class="col-md-2 left-sidebar">
             {{block left_sidebar}}
-            <h3>Left Sidebar</h3>
+
             <p></p>
             {{end}}
         </div>
@@ -99,9 +111,9 @@
       </div>
 
       {{if right_sidebar_enabled:}}
-        <div class="col-md-3">
+        <div class="col-md-2">
             {{block right_sidebar}}
-            <h3>Right Sidebar</h3>
+
             <p></p>
             {{end}}
         </div>
@@ -110,7 +122,7 @@
     </div>
 
     {{block footer}} <!-- this is default footer -->
-    <footer class="footer span12" id="footer">
+    <footer class="footer " id="footer">
       <div id="footer-dtic-logo">
           {{=A(IMG(_src=URL("static", "images/unirio/dtic-unirio-logo-branco.png")), _href="http://www.unirio.br/dtic")}}
       </div>
